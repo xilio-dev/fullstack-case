@@ -10,6 +10,10 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
+import io.netty.util.concurrent.RejectedExecutionHandlers;
+
+import java.nio.channels.spi.SelectorProvider;
+import java.util.concurrent.ThreadFactory;
 
 public class ChatServer {
     // 保存所有客户端通道
@@ -18,7 +22,8 @@ public class ChatServer {
     private static final AttributeKey<String> NICKNAME = AttributeKey.valueOf("nickname");
 
     public static void main(String[] args) throws Exception {
-        EventLoopGroup bossGroup = new NioEventLoopGroup(1);
+        EventLoopGroup bossGroup = new NioEventLoopGroup(1
+        ); // 最后一个参数就是ioRatio
         EventLoopGroup workerGroup = new NioEventLoopGroup();
         try {
             ServerBootstrap b = new ServerBootstrap();
@@ -44,6 +49,7 @@ public class ChatServer {
     static class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         @Override
         public void channelActive(ChannelHandlerContext ctx) throws Exception {
+            System.out.println(Thread.currentThread().getName());
             // 新客户端连接，添加到 ChannelGroup
             channelGroup.add(ctx.channel());
             // 设置默认昵称
