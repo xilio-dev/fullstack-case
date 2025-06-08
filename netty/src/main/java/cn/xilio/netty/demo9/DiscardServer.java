@@ -1,12 +1,16 @@
-package cn.xilio.netty.demo1;
+package cn.xilio.netty.demo9;
 
+
+import cn.xilio.netty.demo4.MessageProto;
 import io.netty.bootstrap.ServerBootstrap;
-
-import io.netty.channel.*;
-import io.netty.channel.epoll.Epoll;
+import io.netty.channel.ChannelFuture;
+import io.netty.channel.ChannelInitializer;
+import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.protobuf.ProtobufDecoder;
+import io.netty.handler.codec.protobuf.ProtobufEncoder;
 
 /**
  * Discards any incoming data.
@@ -29,11 +33,11 @@ public class DiscardServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                            ch.pipeline().addLast(new DiscardServerHandler());
+                         //   ch.pipeline().addLast(new ProtobufDecoder(TunnelMessage.Message.getDefaultInstance()));
+                         //   ch.pipeline().addLast(new ProtobufEncoder());
+                            ch.pipeline().addLast(new DefaultHandler());
                         }
-                    })
-                    .option(ChannelOption.SO_BACKLOG, 128)  //等待队列大小  处理能力不足时连接进入等待队列      // (5)
-                    .childOption(ChannelOption.SO_KEEPALIVE, true); // (6)
+                    });
 
             ChannelFuture f = b.bind(port).sync(); // (7)
             //
@@ -45,12 +49,7 @@ public class DiscardServer {
     }
 
     public static void main(String[] args) throws Exception {
-        System.out.println(Epoll.isAvailable());
-        int port = 8089;
-        if (args.length > 0) {
-            port = Integer.parseInt(args[0]);
-        }
-
+        int port = 3307;
         new DiscardServer(port).run();
     }
 }

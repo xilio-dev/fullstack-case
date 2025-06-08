@@ -3,6 +3,7 @@ package cn.xilio.netty.demo1;
 import java.util.Date;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 
@@ -17,6 +18,12 @@ public class TimeClientHandler extends ChannelInboundHandlerAdapter {
         } finally {
             m.release();
         }
+    }
+
+    @Override
+    public void channelActive(ChannelHandlerContext ctx) throws Exception {
+       // ctx.writeAndFlush(Unpooled.copiedBuffer("QUERY TIME ORDER".getBytes()));
+        super.channelActive(ctx);
     }
 
     @Override

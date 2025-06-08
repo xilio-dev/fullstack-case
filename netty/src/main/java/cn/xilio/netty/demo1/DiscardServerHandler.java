@@ -21,7 +21,21 @@ public class DiscardServerHandler extends ChannelInboundHandlerAdapter { // (1)
         }*/
 //        ctx.write(msg); // (1)
 //        ctx.flush(); // (2)
-        ctx.writeAndFlush( msg);
+        ctx.channel().eventLoop().execute(new Runnable() {
+            @Override
+            public void run() {
+               // Thread.sleep(1 * 10000);//1秒后执行
+                System.out.println("task 1");
+            }
+        });
+        ctx.channel().eventLoop().execute(new Runnable() {
+            @Override
+            public void run() {
+               // Thread.sleep(2 * 10000);
+                System.out.println("task 2"); //30秒后执行
+            }
+        });
+        ctx.writeAndFlush(msg);
     }
 }
 
