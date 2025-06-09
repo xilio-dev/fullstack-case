@@ -10,7 +10,7 @@ import io.netty.channel.socket.nio.NioSocketChannel;
 public class TimeClient {
     public static void main(String[] args) throws Exception {
         String host = "localhost";
-        int port = 8089;
+        int port = 3307;
         EventLoopGroup workerGroup = new NioEventLoopGroup();
 
         try {
@@ -31,7 +31,7 @@ public class TimeClient {
                 public void operationComplete(ChannelFuture future) throws Exception {
                     if (future.isSuccess()) {
                         System.out.println("连接成功");
-                        future.channel().writeAndFlush(Unpooled.copiedBuffer("QUERY TIME ORDER".getBytes()));
+                       // future.channel().writeAndFlush(Unpooled.copiedBuffer("QUERY TIME ORDER".getBytes()));
                     } else {
                         System.out.println("连接失败");
                         future.cause().printStackTrace();
