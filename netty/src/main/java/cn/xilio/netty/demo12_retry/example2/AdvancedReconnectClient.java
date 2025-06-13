@@ -145,7 +145,7 @@ public class AdvancedReconnectClient {
         AdvancedReconnectClient client = new AdvancedReconnectClient(
                 "localhost", 8080,
                 15, 60, 2,
-                List.of("localhost", "127.0.0.1"));
+                /*List.of("localhost", "127.0.0.1")*/null);
 
         client.addReconnectListener(new ReconnectListener() {
             @Override
