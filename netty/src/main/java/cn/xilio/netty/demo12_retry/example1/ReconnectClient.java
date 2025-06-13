@@ -20,11 +20,12 @@ public class ReconnectClient {
     private final int maxRetries;
     //最大延迟时间 如果超过了则取maxDelaySec为最大延迟时间
     private final long maxDelaySec;
+    //当前重试次数
+    private AtomicInteger retryCount = new AtomicInteger(0);
 
     private Bootstrap bootstrap;
     private EventLoopGroup workerGroup;
-    //当前重试次数
-    private AtomicInteger retryCount = new AtomicInteger(0);
+
 
     public ReconnectClient(String host, int port, int maxRetries, long maxDelaySec) {
         this.host = host;
