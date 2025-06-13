@@ -1,9 +1,8 @@
-package cn.xilio.netty.demo1;
+package cn.xilio.netty.demo1_start;
 
 import java.util.Date;
 
 import io.netty.buffer.ByteBuf;
-import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 

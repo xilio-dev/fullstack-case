@@ -1,6 +1,5 @@
 package cn.xilio.netty.demo9;
 
-import cn.xilio.netty.demo1.TimeClientHandler;
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;

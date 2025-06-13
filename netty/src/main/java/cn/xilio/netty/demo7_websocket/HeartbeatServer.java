@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo7;
+package cn.xilio.netty.demo7_websocket;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo8;
+package cn.xilio.netty.demo8_file_upload;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;

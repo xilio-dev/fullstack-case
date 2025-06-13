@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo1;
+package cn.xilio.netty.demo1_start;
 
 import io.netty.buffer.ByteBuf;
 import io.netty.channel.ChannelFuture;

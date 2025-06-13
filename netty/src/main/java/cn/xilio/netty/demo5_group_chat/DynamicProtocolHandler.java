@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo5;
+package cn.xilio.netty.demo5_group_chat;
 
 import io.netty.channel.*;
 import io.netty.handler.codec.protobuf.ProtobufDecoder;

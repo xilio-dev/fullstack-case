@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo2;
+package cn.xilio.netty.demo2_nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

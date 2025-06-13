@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo5;
+package cn.xilio.netty.demo5_group_chat;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.channel.*;
@@ -10,10 +10,6 @@ import io.netty.handler.codec.string.StringDecoder;
 import io.netty.handler.codec.string.StringEncoder;
 import io.netty.util.AttributeKey;
 import io.netty.util.concurrent.GlobalEventExecutor;
-import io.netty.util.concurrent.RejectedExecutionHandlers;
-
-import java.nio.channels.spi.SelectorProvider;
-import java.util.concurrent.ThreadFactory;
 
 public class ChatServer {
     // 保存所有客户端通道
