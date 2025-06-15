@@ -33,8 +33,6 @@ public class DiscardServer {
                     .childHandler(new ChannelInitializer<SocketChannel>() { // (4)
                         @Override
                         public void initChannel(SocketChannel ch) throws Exception {
-                         //   ch.pipeline().addLast(new ProtobufDecoder(TunnelMessage.Message.getDefaultInstance()));
-                         //   ch.pipeline().addLast(new ProtobufEncoder());
                             ch.pipeline().addLast(new DefaultHandler());
                         }
                     });

@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo11_udp;
+package cn.xilio.netty.demo11_udp.weather;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.buffer.ByteBuf;
@@ -71,6 +71,6 @@ public class WeatherServer {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        new WeatherServer(8888).start();
+        new WeatherServer(8080).start();
     }
 }

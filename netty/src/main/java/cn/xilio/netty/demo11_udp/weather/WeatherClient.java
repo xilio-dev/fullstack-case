@@ -1,4 +1,4 @@
-package cn.xilio.netty.demo11_udp;
+package cn.xilio.netty.demo11_udp.weather;
 
 import io.netty.bootstrap.Bootstrap;
 import io.netty.channel.*;
@@ -50,6 +50,6 @@ public class WeatherClient {
 
     public static void main(String[] args) throws InterruptedException {
          String city = "Shanghai";
-        new WeatherClient("127.0.0.1", 8888).start(city);
+        new WeatherClient("127.0.0.1", 8080).start(city);
     }
 }
