@@ -24,6 +24,7 @@ public class ByteBufExample {
         byte[] byteArray = new byte[4];
         buffer.readBytes(byteArray);
 
+
         System.out.println("读取的整数: " + intValue);
         System.out.println("读取的浮点数: " + floatValue);
         System.out.print("读取的字节数组: ");
