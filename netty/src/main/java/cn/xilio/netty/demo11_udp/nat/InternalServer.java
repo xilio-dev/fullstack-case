@@ -82,7 +82,7 @@ public class InternalServer {
     }
 
     public static void main(String[] args) throws Exception {
-        InternalServer server = new InternalServer("127.0.0.1", 8000);
+        InternalServer server = new InternalServer("127.0.0.1", 9000);
         server.run();
         Runtime.getRuntime().addShutdownHook(new Thread(server::close));
     }
