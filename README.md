@@ -17,6 +17,8 @@
 - [高低水位线案例](netty/src/main/java/cn/xilio/netty/demo19_water_line)
 - [ 基于WebSocket的远程命令交互终端案例](netty/src/main/java/cn/xilio/netty/demo20_console)
 
+## JDK
+- [SOAP协议通信案例](jdk/src/soap/simple)
 
 ## 整合
 - [Springboot+Freemarker整合AdminLTE v3前后端不分离](springboot-adminlte-freemarker)
