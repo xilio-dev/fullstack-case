@@ -18,7 +18,4 @@
 - [ 基于WebSocket的远程命令交互终端案例](netty/src/main/java/cn/xilio/netty/console)
 
 ## JDK
-- [SOAP协议通信案例](jdk/src/soap/simple)
-
-## 整合
-- [Springboot+Freemarker整合AdminLTE v3前后端不分离](springboot-adminlte-freemarker)
+- [forkjoin拆分求和案例](jdk/src/main/java/cn/xilio/jdk/thread/forkjoin)
